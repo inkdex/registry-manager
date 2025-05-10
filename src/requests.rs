@@ -122,7 +122,7 @@ impl Requests {
         );
 
         match Client::builder()
-            .user_agent("paperback-community/registry-manager")
+            .user_agent("inkdex/registry-manager")
             .default_headers(headers)
             .timeout(Duration::new(15, 0))
             .build()
@@ -287,7 +287,7 @@ impl Requests {
         let p_response = match serde_json::to_string(&body) {
             Ok(body_string) => self
                 .client
-                .post("https://api.github.com/repos/paperback-community/extensions/git/blobs")
+                .post("https://api.github.com/repos/inkdex/extensions/git/blobs")
                 .body(body_string)
                 .send(),
             Err(err) => {
@@ -355,7 +355,7 @@ impl Requests {
         let p_response = match serde_json::to_string(&body) {
             Ok(body_string) => self
                 .client
-                .post("https://api.github.com/repos/paperback-community/extensions/git/trees")
+                .post("https://api.github.com/repos/inkdex/extensions/git/trees")
                 .body(body_string)
                 .send(),
             Err(err) => {
@@ -416,7 +416,7 @@ impl Requests {
         let p_response = match serde_json::to_string(&body) {
             Ok(body_string) => self
                 .client
-                .post("https://api.github.com/repos/paperback-community/extensions/git/commits")
+                .post("https://api.github.com/repos/inkdex/extensions/git/commits")
                 .body(body_string)
                 .send(),
             Err(err) => {
@@ -464,9 +464,7 @@ impl Requests {
         let p_response = match p_body_string {
             Ok(body_string) => self
                 .client
-                .post(
-                    "https://api.github.com/repos/paperback-community/extensions/git/refs/heads/master",
-                )
+                .post("https://api.github.com/repos/inkdex/extensions/git/refs/heads/master")
                 .body(body_string)
                 .send(),
             Err(err) => {

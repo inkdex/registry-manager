@@ -199,7 +199,7 @@ impl Versioning {
             .get(
                 env::var("REPOSITORY")
                     .unwrap()
-                    .strip_prefix("paperback-community/")
+                    .strip_prefix("inkdex/")
                     .unwrap(),
             )
             .cloned()
@@ -226,7 +226,7 @@ impl Versioning {
             .entry(
                 env::var("REPOSITORY")
                     .unwrap()
-                    .strip_prefix("paperback-community/")
+                    .strip_prefix("inkdex/")
                     .unwrap()
                     .to_string(),
             )
@@ -266,12 +266,11 @@ impl Versioning {
         if self.repository.name.is_empty() {
             /*
              * The version in the repository name is hard coded until the types package and app version are in sync again, alternative:
-             * format!("Paperback Community Extensions({}.{})", self.built_with.types.parse::<Version>().unwrap().major, self.built_with.types.parse::<Version>().unwrap().minor);
+             * format!("Inkdex Extensions({}.{})", self.built_with.types.parse::<Version>().unwrap().major, self.built_with.types.parse::<Version>().unwrap().minor);
              */
-            self.repository.name = String::from("Paperback Community Extensions (0.9)");
-            self.repository.description = String::from(
-                "All extensions from the Paperback Community combined into a single repository.",
-            );
+            self.repository.name = String::from("Inkdex Extensions (0.9)");
+            self.repository.description =
+                String::from("All extensions from the Inkdex community in a single repository.");
         }
 
         Ok(managed_extensions)
@@ -327,7 +326,7 @@ impl Versioning {
                 .get_mut(
                     env::var("REPOSITORY")
                         .unwrap()
-                        .strip_prefix("paperback-community/")
+                        .strip_prefix("inkdex/")
                         .unwrap(),
                 )
                 .unwrap()
@@ -381,7 +380,7 @@ impl Versioning {
                     .get_mut(
                         env::var("REPOSITORY")
                             .unwrap()
-                            .strip_prefix("paperback-community/")
+                            .strip_prefix("inkdex/")
                             .unwrap(),
                     )
                     .unwrap()
@@ -415,7 +414,7 @@ impl Versioning {
                 .get_mut(
                     env::var("REPOSITORY")
                         .unwrap()
-                        .strip_prefix("paperback-community/")
+                        .strip_prefix("inkdex/")
                         .unwrap(),
                 )
                 .unwrap()
@@ -427,7 +426,7 @@ impl Versioning {
                 .get(
                     env::var("REPOSITORY")
                         .unwrap()
-                        .strip_prefix("paperback-community/")
+                        .strip_prefix("inkdex/")
                         .unwrap(),
                 )
                 .unwrap()
@@ -437,7 +436,7 @@ impl Versioning {
                 metadata.repositories.remove(
                     env::var("REPOSITORY")
                         .unwrap()
-                        .strip_prefix("paperback-community/")
+                        .strip_prefix("inkdex/")
                         .unwrap(),
                 );
             }

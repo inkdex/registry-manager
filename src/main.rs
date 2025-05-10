@@ -60,10 +60,8 @@ fn run() -> Result<(), ()> {
     )?;
 
     info!("Fetching the latest commit and tree in the registry");
-    let registry_branch = request_client.get_branch(
-        &String::from("paperback-community/extensions"),
-        &String::from("master"),
-    )?;
+    let registry_branch =
+        request_client.get_branch(&String::from("inkdex/extensions"), &String::from("master"))?;
 
     info!("Creating a new tree in the registry");
     let registry_update_tree = request_client.create_tree(
@@ -78,7 +76,7 @@ fn run() -> Result<(), ()> {
                 "Registry management ({}, {})",
                 env::var("REPOSITORY")
                     .unwrap()
-                    .strip_prefix("paperback-community/")
+                    .strip_prefix("inkdex/")
                     .unwrap(),
                 env::var("BRANCH").unwrap(),
             )
@@ -118,7 +116,7 @@ fn request_registry_versioning_metadata_files(
     request_client: &Requests,
 ) -> Result<(Box<Versioning>, Box<Metadata>, ManageTypes), ()> {
     match request_client.get_file(
-        &String::from("paperback-community/extensions"),
+        &String::from("inkdex/extensions"),
         &(env::var("BRANCH").unwrap() + "/versioning.json"),
         &String::from("master"),
         &FileOutputFormat::UTF8,
@@ -127,7 +125,7 @@ fn request_registry_versioning_metadata_files(
             if let Ok(registry_versioning) = Versioning::new(&response) {
                 info!("Requesting the registry metadata file");
                 if let Ok(response) = request_client.get_file(
-                    &String::from("paperback-community/extensions"),
+                    &String::from("inkdex/extensions"),
                     &(env::var("BRANCH").unwrap() + "/metadata.json"),
                     &String::from("master"),
                     &FileOutputFormat::UTF8,
@@ -183,10 +181,7 @@ fn extension_management(
             }
             ManageTypes::Deletion => {
                 info!("Deleting extension: {}", managed_extension.0);
-                (
-                    &String::from("paperback-community/extensions"),
-                    &String::from("master"),
-                )
+                (&String::from("inkdex/extensions"), &String::from("master"))
             }
         };
 

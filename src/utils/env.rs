@@ -36,9 +36,9 @@ pub fn validate() -> Result<(), ()> {
      */
 
     if let Ok(value) = env::var("REPOSITORY") {
-        if !value.to_string().starts_with("paperback-community/") || value.to_string().len() < 20 {
+        if !value.to_string().starts_with("inkdex/") || value.to_string().len() < 20 {
             error!(
-                "The provided repository is invalid, it should be of the structure \"paperback-community/<repository_name>\", consider using \"$${{ github.repository_name }}\""
+                "The provided repository is invalid, it should be of the structure \"inkdex/<repository_name>\", consider using \"$${{ github.repository_name }}\""
             );
             return Err(());
         }
