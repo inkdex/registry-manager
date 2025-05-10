@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+No Unreleased changes at this moment.
+
+## [v0.3.1] - 2025-05-11
+
 ### Miscellaneous
 
 - Rebranded to Inkdex (@celarye)
@@ -69,7 +73,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GitHub Issue templates (@Celarye)
 - GitHub support, security and contributing guidelines (@Celarye)
 
-[Unreleased]: https://github.com/inkdex/registry-manager/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/inkdex/registry-manager/compare/v0.3.1...HEAD
+[v0.3.1]: https://github.com/inkdex/registry-manager/compare/v0.3.0...v0.3.1
 [v0.3.0]: https://github.com/inkdex/registry-manager/compare/v0.2.1...v0.3.0
 [v0.2.1]: https://github.com/inkdex/registry-manager/compare/v0.2.0...v0.2.1
 [v0.2.0]: https://github.com/inkdex/registry-manager/compare/v0.1.0...v0.2.0
